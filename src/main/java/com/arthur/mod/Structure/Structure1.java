@@ -319,12 +319,12 @@ public class Structure1
             world.setBlockState(new BlockPos(i + 9, j + 4, k + 1), Blocks.stone_stairs.getStateFromMeta(1), 3);
             world.setBlockState(new BlockPos(i + 2, j + 4, k + 2), Blocks.planks.getStateFromMeta(5), 3);
             world.setBlockState(new BlockPos(i + 3, j + 4, k + 2), Blocks.mob_spawner.getStateFromMeta(0), 3);
-            world.setBlockState(new BlockPos(i + 4, j + 4, k + 2), (IBlockState)BlockMod.amazoniteblock);
+            world.setBlockState(new BlockPos(i + 4, j + 4, k + 2), BlockMod.amazoniteblock.getDefaultState());
             world.setBlockState(new BlockPos(i + 6, j + 4, k + 2), Blocks.bed.getStateFromMeta(3), 3);
             world.setBlockState(new BlockPos(i + 7, j + 4, k + 2), Blocks.bed.getStateFromMeta(11), 3);
             world.setBlockState(new BlockPos(i + 8, j + 4, k + 2), Blocks.planks.getStateFromMeta(5), 3);
             world.setBlockState(new BlockPos(i + 2, j + 4, k + 3), Blocks.planks.getStateFromMeta(5), 3);
-            world.setBlockState(new BlockPos(i + 3, j + 4, k + 3), (IBlockState)BlockMod.amazoniteblock);
+            world.setBlockState(new BlockPos(i + 3, j + 4, k + 3), BlockMod.amazoniteblock.getDefaultState());
             world.setBlockState(new BlockPos(i + 7, j + 4, k + 3), Blocks.bookshelf.getStateFromMeta(0), 3);
             world.setBlockState(new BlockPos(i + 8, j + 4, k + 3), Blocks.planks.getStateFromMeta(5), 3);
             world.setBlockState(new BlockPos(i + 2, j + 4, k + 4), Blocks.planks.getStateFromMeta(5), 3);
@@ -362,7 +362,7 @@ public class Structure1
             world.setBlockState(new BlockPos(i + 7, j + 5, k + 1), Blocks.wool.getStateFromMeta(0), 3);
             world.setBlockState(new BlockPos(i + 8, j + 5, k + 1), Blocks.cobblestone.getStateFromMeta(0), 3);
             world.setBlockState(new BlockPos(i + 2, j + 5, k + 2), Blocks.dark_oak_stairs.getStateFromMeta(0), 3);
-            world.setBlockState(new BlockPos(i + 3, j + 5, k + 2), BlockMod.amazonite.getStateFromMeta(0), 3);
+            world.setBlockState(new BlockPos(i + 3, j + 5, k + 2), BlockMod.amazonite.getDefaultState());
             world.setBlockState(new BlockPos(i + 8, j + 5, k + 2), Blocks.dark_oak_stairs.getStateFromMeta(1), 3);
             world.setBlockState(new BlockPos(i + 2, j + 5, k + 3), Blocks.dark_oak_stairs.getStateFromMeta(0), 3);
             world.setBlockState(new BlockPos(i + 8, j + 5, k + 3), Blocks.dark_oak_stairs.getStateFromMeta(1), 3);
