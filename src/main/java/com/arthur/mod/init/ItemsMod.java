@@ -1,0 +1,83 @@
+package com.arthur.mod.init;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import com.arthur.mod.Reference;
+import com.arthur.mod.Item.ItemModArmor;
+import com.arthur.mod.Item.ItemModAxe;
+import com.arthur.mod.Item.ItemModPickaxe;
+import com.arthur.mod.Item.ItemModShovel;
+import com.arthur.mod.Item.ItemModSword;
+
+public class ItemsMod
+{
+    public static ToolMaterial amazoniteToolMaterial = EnumHelper.addToolMaterial("AMAZONITE", 9, 2060, 10.0F, 3, 15);
+    public static ArmorMaterial amazoniteArmorMaterial = EnumHelper.addArmorMaterial("AMAZONITE", "amazonite", 100, new int[] {4, 7, 6, 4}, 11);
+
+    public static Item amazoniteitem, amazoniteHelmet, amazoniteChestplate, amazoniteLeggings, amazoniteBoots, pickaxeMod, swordMod, Shovel, axeMod, shovelMod;
+
+    public static void init()
+    {
+        amazoniteitem = new Item().setUnlocalizedName("amazoniteitem").setCreativeTab(CreativeTabs.tabMaterials);
+        amazoniteHelmet = new ItemModArmor(amazoniteArmorMaterial, 0).setUnlocalizedName("AmazoniteHelmet").setCreativeTab(CreativeTabs.tabCombat);
+        amazoniteChestplate = new ItemModArmor(amazoniteArmorMaterial, 1).setUnlocalizedName("AmazoniteChestplate").setCreativeTab(CreativeTabs.tabCombat);
+        amazoniteLeggings = new ItemModArmor(amazoniteArmorMaterial, 2).setUnlocalizedName("AmazoniteLeggings").setCreativeTab(CreativeTabs.tabCombat);
+        amazoniteBoots = new ItemModArmor(amazoniteArmorMaterial, 3).setUnlocalizedName("AmazoniteBoots").setCreativeTab(CreativeTabs.tabCombat);
+        pickaxeMod = new ItemModPickaxe(amazoniteToolMaterial).setUnlocalizedName("pickaxeMod").setCreativeTab(CreativeTabs.tabTools);
+        shovelMod = new ItemModShovel(amazoniteToolMaterial).setUnlocalizedName("ShovelMod").setCreativeTab(CreativeTabs.tabTools);
+        axeMod = new ItemModAxe(amazoniteToolMaterial).setUnlocalizedName("axeMod").setCreativeTab(CreativeTabs.tabTools);
+        swordMod = new ItemModSword(amazoniteToolMaterial).setUnlocalizedName("swordMod").setCreativeTab(CreativeTabs.tabCombat);
+    }
+
+    public static void register()
+    {
+        GameRegistry.registerItem(amazoniteitem, "amazoniteitem");
+        GameRegistry.registerItem(pickaxeMod, "pickaxeMod");
+        GameRegistry.registerItem(swordMod, "swordMod");
+        GameRegistry.registerItem(amazoniteHelmet, "AmazoniteHelmet");
+        GameRegistry.registerItem(amazoniteChestplate, "AmazoniteChestplate");
+        GameRegistry.registerItem(amazoniteLeggings, "AmazoniteLeggings");
+        GameRegistry.registerItem(amazoniteBoots, "AmazoniteBoots");
+        GameRegistry.registerItem(shovelMod, "ShovelMod");
+        GameRegistry.registerItem(axeMod, "axeMod");
+
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteHelmet, 1), new Object[] {"###", "# #", "   ", '#', ItemsMod.amazoniteitem});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteChestplate, 1), new Object[] {"# #", "###", "###", '#', ItemsMod.amazoniteitem});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteLeggings, 1), new Object[] {"###", "# #", "# #", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteBoots, 1), new Object[] {"# #", "# #", "   ", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.pickaxeMod, 1), new Object[] {"###", " S ", " S ", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.swordMod, 1), new Object[] {" # ", " # ", " S ", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.axeMod, 1), new Object[] {" ##", " S#", " S ", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.shovelMod, 1), new Object[] {" # ", " S ", " S ", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteHelmet, 1), new Object[] {"   ", "###", "# #", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteBoots, 1), new Object[] {"   ", "# #", "# #", '#', ItemsMod.amazoniteitem, 'S', Items.stick});
+
+    }
+
+    public static void registerRenders()
+    {
+        registerRender(amazoniteitem);
+        registerRender(swordMod);
+        registerRender(pickaxeMod);
+        registerRender(amazoniteHelmet);
+        registerRender(amazoniteChestplate);
+        registerRender(amazoniteLeggings);
+        registerRender(amazoniteBoots);
+        registerRender(shovelMod);
+        registerRender(axeMod);
+    }
+
+    public static void registerRender(Item item)
+    {
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.Mod_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+    }
+}

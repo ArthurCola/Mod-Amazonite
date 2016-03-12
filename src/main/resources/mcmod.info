@@ -1,0 +1,16 @@
+[
+{
+  "modid": "arthur",
+  "name": "rubisplus",
+  "description": "mod qui rajoute des items de rubis",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://twitter.com/arthurcolaoffi",
+  "updateUrl": "",
+  "authorList": ["ArthurCola"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
