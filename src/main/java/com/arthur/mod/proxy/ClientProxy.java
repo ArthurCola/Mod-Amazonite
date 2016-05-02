@@ -11,5 +11,6 @@ public class ClientProxy extends CommonProxy
        ItemsMod.registerRenders();
        BlockMod.registerRenders();
        
+       
     }
 }

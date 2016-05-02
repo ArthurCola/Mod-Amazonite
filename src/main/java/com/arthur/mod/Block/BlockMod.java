@@ -1,4 +1,4 @@
-package com.arthur.mod.init;
+package com.arthur.mod.Block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -7,11 +7,11 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import com.arthur.mod.Reference;
 import com.arthur.mod.Block.BlocksMod;
+import com.arthur.mod.Reference;
+import com.arthur.mod.init.ItemsMod;
 
 public class BlockMod
 {
@@ -30,6 +30,7 @@ public class BlockMod
      GameRegistry.addSmelting(BlockMod.amazonite, new ItemStack(ItemsMod.amazoniteitem, 1), 0.5F);
      GameRegistry.addRecipe(new ItemStack(BlockMod.amazoniteblock, 1), new Object[] {"###", "###", "###", '#', ItemsMod.amazoniteitem});
      GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteitem, 9), new Object[] {"   ", " # ", "   ", '#', BlockMod.amazoniteblock});
+     GameRegistry.addRecipe(new ItemStack(ItemsMod.amazoniteitem, 9), new Object[] {"   ", "#  ", "   ", '#', BlockMod.amazoniteblock});
      
     }
     
